@@ -1,0 +1,15 @@
+[Unit]
+Description=Browser Income API
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/browser-income-api
+EnvironmentFile=/opt/browser-income-api/.env
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=5
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target
